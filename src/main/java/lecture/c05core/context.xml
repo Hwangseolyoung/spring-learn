@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean의 이름은 id다 -->
+	<!-- bean의 객체의 기본값은 1개이다. -->
+	<bean class="lecture.c05core.MyServlet">
+		<!-- 주입방법 : name에 set메소드명으로 작성해주고 ref에 MyDao의 id명 입력해준다
+				같은 객체를 주입해준다(객체의 참조값이 동일하다)-->
+		<property name="dao" ref="myDao"></property>
+	</bean>
+	
+	<bean id="myDao" class="lecture.c05core.MyDao"></bean>
+</beans>
