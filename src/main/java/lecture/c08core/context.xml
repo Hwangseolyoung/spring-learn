@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- context:component-scan 태그 사용 (@component가 붙여진 클래스를 자동 연결하여 bean으로 만들어줌)
+		base-packag 에 작성된 패키지와 하위 패키지까지 스캔한다. 
+		@Autowired 가 붙어있으면 bean을 자동 주입한다.-->
+	<context:component-scan base-package="lecture.c08core"></context:component-scan>
+
+</beans>
