@@ -7,5 +7,5 @@
 		<property name="memory" ref="memory"></property>
 	</bean>
 	<bean id="memory" class="lecture.c06core.Memory"></bean>
-
+ 
 </beans>
