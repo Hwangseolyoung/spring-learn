@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean : ApplicationContext가 관리하는 bean(객체) -->
+	<!-- 클래스명에 클래스 루트 명시해주면 bean이 만들어진다.--> 
+	
+	<!-- Servlet class로 만든 bean객체 -->
+	<bean class="lecture.c04core.Servlet"></bean>
+	<!-- Dao class로 만든 bean객체 -->
+	<bean class="lecture.c04core.Dao"></bean>
+</beans>
