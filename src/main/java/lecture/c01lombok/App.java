@@ -12,7 +12,7 @@ public class App {
 		
 		o1.setAge(33);
 		o1.setName("sunja");
-		
+		 
 		System.out.println(o1.getAge());
 		System.out.println(o1.getName());
 		
