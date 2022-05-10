@@ -24,7 +24,7 @@ public class Ex08Controller {
 		
 		// 리턴타입 String에는 prefix, prefix
 		// prefix : /WEB-INF/views/
-		// prefix : .jsp
+		// suffix : .jsp
 				
 		//full view name : /WEB-INF/views/ex08/sub01.jsp
 		
