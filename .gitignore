@@ -7,3 +7,4 @@ build/
 .springBeans
 src/main/java/org/zerock/sample/Chef.java
 src/main/java/org/zerock/sample/Restaurant.java
+*.properties
