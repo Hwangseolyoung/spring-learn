@@ -13,14 +13,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<%-- ${pageContext.request.contextPath } 생략해도 추가해줌--%>
+	<c:url value="/ex14/sub06" var="employeeUrl"></c:url>
+	
 	<h1>NEW 직원 등록카드</h1>
 	${message }
 	
-	<form action="${pageContext.request.contextPath }/ex14/sub06" method="post">
+	<form action="${employeeUrl }/ex14/sub06" method="post">
 		LastName : <input type="text" name="lastName" value="Jimin" /> <br/>
 		firstName : <input type="text" name="firstName" value="Kim" /> <br/>
-		Photo : <input type="file" name="photo" value="" /> <br/>
-		Notes : <input type="text" name="notes" value="Resolution" />
+		Birth Date : <input type="date" name="birthDate" value="1966-09-09" /> <br/>
+		Photo : <input type="file" name="photo" value="" /> <br/> <br/>
+		Notes : <textarea name="notes" id="" cols="30" rows="10">Resolution..</textarea> <br/>
 		<button>등록</button>
 	</form>
 	
