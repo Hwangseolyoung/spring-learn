@@ -20,5 +20,5 @@ public class EmployeeDto {
 	private LocalDate birthDate;
 	private String Photo;
 	private String Notes;
-	
+	 
 }
