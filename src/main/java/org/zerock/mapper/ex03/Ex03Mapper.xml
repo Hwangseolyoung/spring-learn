@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 1. mapper namespace에 mapper 파일 경로 써주기 -->
+<mapper namespace="org.zerock.mapper.ex03.Ex03Mapper">
+	<!-- 2. mapper의 method명을 id에 작성하고 return type을 resultType에 작성한다. -->
+  <select id="selectCustomerNameById" resultType="string">
+	<!-- 3. 쿼리를 작성한다. -->
+    SELECT CustomerName FROM Customers WHERE CustomerId = #{id}
+  </select>
+   
+  <select id="selectEmployeeFirstNameById" resultType="String">
+  	SELECT FirstName
+  	FROM Employees 
+  	WHERE EmployeeID = #{id}
+  </select>
+  
+  <!-- list의 return type은 안에 있는 item 전체 경로를 쓰면된다. -->
+  <select id="selectBoard" resultType="org.zerock.domain.ex02.BoardDto">
+  	SELECT id, title, body, inserted
+  	FROM Board
+  	ORDER BY id DESC
+  </select>
+  
+  <select id="getBoard" resultType="org.zerock.domain.ex02.BoardDto">
+  	SELECT id, title, body, inserted
+  	FROM Board
+  	WHERE id = #{id}
+  </select>
+  
+  <!-- update는 resultType 생략가능 -->
+  <update id="updateBoard" >
+  	UPDATE Board
+  	SET title = #{title},
+  		body = #{body}
+  	WHERE id = #{id}
+  </update>
+  
+</mapper>
