@@ -13,21 +13,71 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${board.id }번 게시물</h1>
-	
-	<c:url value="/ex15/board/modify" var="modifyLink">
+	<h1>${board.id }번게시물</h1>
 
-	</c:url>
-	
-	<form action="${modifyLink }" method="post">
-	<input type="hidden" name="id" value="${board.id }"/>
-	
-	제목 : <input type="text" value="${board.title }" name="title"/> <br />
-	
-	본문 : <textarea cols="30" rows="10" name="body">${board.body }</textarea> <br />
-	
-	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly/>  <br />
-	<button>수정</button>
+	<form action="${appRoot }/ex15/board/modify" method="post">
+		<input type="hidden" name="id" value="${board.id }" />
+
+		제목 :
+		<input type="text" value="${board.title }" name="title" />
+		<br />
+
+		본문 :
+		<textarea cols="30" rows="10" name="body">${board.body }</textarea>
+		<br />
+
+		작성일시 :
+		<input type="datetime-local" value="${board.inserted }" readonly />
+		<br />
+		<button>수정</button>
 	</form>
+
+	<!-- 삭제 -->
+	<c:url value="/ex15/board/remove" var="removeLink" />
+	<form action="${removeLink }" method="post">
+		<input type="hidden" name="id" value="${board.id }" />
+		<button>삭제</button>
+	</form>
+
+	<hr />
+
+	<h1>댓글</h1>
+
+	<c:url value="/ex16/reply/add" var="replyAddLink" />
+
+	<form action="${replyAddLink }" method="post">
+		<input type="hidden" name="boardId" value="${board.id }" />
+		댓글 :
+		<input type="text" name="content" size="50" />
+
+		<button>쓰기</button>
+	</form>
+
+	<hr />
+
+	<div>
+		<c:forEach items="${replyList }" var="reply">
+
+			<div style="border: 1px solid black; margin-botton: 3px;">
+				${reply.inserted } : 
+				
+				<c:url value="/ex16/reply/modify" var="replyModifyLink" />
+				<form action="${replyModifyLink }" method="post">
+					<input type="hidden" value="${reply.id }" name="id" />
+					<input type="hidden" name="boardId" value="${board.id }" />
+					<input type="text" value="${reply.content }" name="content" />
+					<button>수정</button>
+				</form>
+				
+				<c:url value="/ex16/reply/remove" var="replyRemoveLink" />
+				<form action="${replyRemoveLink }" method="post">
+					<input type="hidden" name="id" value="${reply.id }" />
+					<input type="hidden" name="boardId" value="${board.id }" />
+					<button>삭제</button>
+				</form>
+			</div>
+
+		</c:forEach>
+	</div>
 </body>
 </html>
