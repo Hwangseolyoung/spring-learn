@@ -1,6 +1,7 @@
 package org.zerock.domain.ex02;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -10,6 +11,8 @@ public class BoardDto {
 	private int id;
 	private String title;
 	private String body;
-	private LocalDate inserted;
+	private LocalDateTime inserted;
+	
+	private int numOfReply;
 
 }
