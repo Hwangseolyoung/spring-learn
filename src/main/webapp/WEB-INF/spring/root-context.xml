@@ -30,4 +30,12 @@
 	<!-- @Component 어노테이션이 있으면 spring bean으로 만들고
 	@Autowired 명시된 필드 생성자등을 찾아 빈을 주입해준다. -->
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>
+	
+	<!-- transaction 처리 (책 469) -->
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>		
+	</bean>
+	
+	<tx:annotation-driven/>
 </beans>
